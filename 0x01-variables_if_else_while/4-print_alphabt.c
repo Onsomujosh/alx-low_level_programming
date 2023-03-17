@@ -1,4 +1,4 @@
-#include stdio.h>
+#include <stdio.h>
 
 /**
  * main - prints alphabet in lowercase except q and e
@@ -10,7 +10,7 @@ int main(void)
 	char alp[24] = "abcdfghijklmnoprstuvwxyz"
 	int i;
 
-	for (i = o; i < 24; i++)
+	for (i = 0; i < 24; i++)
 	{
 		putchar(alp[i]);
 	}
