@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * main - prints the sign of a number
+ * print_sign - prints the sign of a number
  * if the number is greater, equal or less than zero
+ *
+ * @n: the int to check
  *
  * Return: 1 is greater than 0, 0 is zero, -1 is less than zero
  */

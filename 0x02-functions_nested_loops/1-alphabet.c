@@ -1,7 +1,7 @@
 include "main.h"
 
 /**
- * main - prints lowercase alphabet followed by new line
+ * print_alphabet - prints lowercase alphabet followed by new line
  *
  * Return: Always 0(Success)
  */
