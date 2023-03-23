@@ -3,7 +3,7 @@
 /**
  * _isalpha - checks for alphabetic character
  * whether lower or upper case
- *
+ *@c: the character to be checked
  * Return: 1(letters) 0(others)
  */
 int _isalpha(int c)
@@ -17,4 +17,4 @@ int _isalpha(int c)
 		return (0);
 	}
 	_putchar('\n');
-}	
+}
