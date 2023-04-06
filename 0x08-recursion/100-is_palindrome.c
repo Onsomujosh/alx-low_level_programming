@@ -6,7 +6,7 @@ int is_palindrome_helper(char *s, int start, int end);
 /**
  *is_palindrome - function that checks for a palindrome
  *@s: string being checked
- *is_palindrome_helper - function that does the actual check
+ *
  *Return: 1 if a palindrome, 0 if not
  */
 int is_palindrome(char *s)
@@ -14,6 +14,13 @@ int is_palindrome(char *s)
 	return (is_palindrome_helper(s, 0, strlen(s) - 1));
 }
 
+/**
+ * is_palindrome_helper - function that does the actual checking
+ * @s: string being checked
+ * @start: beginning of string
+ * @end: end of string
+ * Return: 1 if palindrome, 0 if not
+ */
 int is_palindrome_helper(char *s, int start, int end)
 {
 	if (start >= end)
