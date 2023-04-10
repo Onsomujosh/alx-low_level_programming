@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		printf("0\n");
 		return (0);
 	}
-	
+
 	coins = 0;
 
 	coins += cents / 25;
