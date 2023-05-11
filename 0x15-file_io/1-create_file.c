@@ -9,34 +9,25 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *fp;
-	size_t len, n;
-	struct stat st;
+	int file, fwrite, i;
 
 	if (filename == NULL)
 		return (-1);
 
-	fp = fopen(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
-	if (fp == NULL)
+	file = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
+	if (file == -1)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-		len = strlen(text_content);
-		n = fwrite(text_content, sizeof(char), len, fp);
-		if (n != len)
+		for (i = 0; text_content[i]; i++)
+			;
+		fwrite = write(file, text_content, i);
+		if (fwrite == -1)
 		{
-			fclose(fp);
 			return (-1);
 		}
 	}
-
-	if (stat(filename, &st) != 0)
-		return (-1);
-	if ((st.st_mode &  S_IRUSR) == 0 || (st.st_mode & S_IWUSR) == 0)
-	{
-		if (chmod(filename, S_IRUSR | S_IWUSR) != 0)
-			return (-1);
-	}
+	close(file);
 	return (1);
 }
